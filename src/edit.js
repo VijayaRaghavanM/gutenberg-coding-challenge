@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { edit, globe } from '@wordpress/icons';
-import { BlockControls } from '@wordpress/block-editor';
+import { BlockControls, useBlockProps } from '@wordpress/block-editor';
 import {
 	ComboboxControl,
 	Placeholder,
@@ -28,6 +28,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	} ) );
 
 	const [ isPreview, setPreview ] = useState();
+	const blockProps = useBlockProps();
 
 	useEffect( () => setPreview( countryCode ), [ countryCode ] );
 
@@ -82,7 +83,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 				</ToolbarGroup>
 			</BlockControls>
-			<div>
+			<div { ...blockProps }>
 				{ isPreview ? (
 					<Preview
 						countryCode={ countryCode }
