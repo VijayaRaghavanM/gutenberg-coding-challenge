@@ -17,16 +17,14 @@ import { __ } from '@wordpress/i18n';
  * Internal dependencies
  */
 import countries from '../assets/countries.json';
-import { getEmojiFlag } from './utils';
+import { getCountryDropdownOptions } from './utils';
 import Preview from './preview';
 import './editor.scss';
 
+const options = getCountryDropdownOptions();
+
 export default function Edit( { attributes, setAttributes } ) {
 	const { countryCode, relatedPosts } = attributes;
-	const options = Object.keys( countries ).map( ( code ) => ( {
-		value: code,
-		label: getEmojiFlag( code ) + '  ' + countries[ code ] + ' — ' + code,
-	} ) );
 
 	const [ isPreview, setPreview ] = useState();
 	const blockProps = useBlockProps();
