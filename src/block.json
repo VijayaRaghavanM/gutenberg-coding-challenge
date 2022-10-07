@@ -24,12 +24,12 @@
 				"title": {
 					"type": "string",
 					"selector": ".title",
-					"source": "text"
+					"source": "html"
 				},
 				"excerpt": {
 					"type": "string",
 					"selector": ".excerpt",
-					"source": "text"
+					"source": "html"
 				},
 				"link": {
 					"type": "string",
