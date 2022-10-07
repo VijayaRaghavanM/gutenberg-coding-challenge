@@ -23,23 +23,23 @@
 			"query": {
 				"title": {
 					"type": "string",
-					"selector": ".title",
+					"selector": ".related-post__title",
 					"source": "html"
 				},
 				"excerpt": {
 					"type": "string",
-					"selector": ".excerpt",
+					"selector": ".related-post__excerpt",
 					"source": "html"
 				},
 				"link": {
 					"type": "string",
-					"selector": ".link",
+					"selector": ".related-post__link",
 					"source": "attribute",
 					"attribute": "href"
 				},
 				"id": {
 					"type": "string",
-					"selector": ".link",
+					"selector": ".related-post__link",
 					"source": "attribute",
 					"attribute": "data-post-id"
 				}

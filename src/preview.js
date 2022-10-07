@@ -18,21 +18,21 @@ export default function Preview( { countryCode, relatedPosts } ) {
 		hasRelatedPosts = relatedPosts?.length > 0;
 
 	return (
-		<div className="xwp-country-card">
+		<article className="xwp-country-card">
 			<div
 				className="xwp-country-card__media"
 				data-emoji-flag={ emojiFlag }
 			>
-				<div className="xwp-country-card-flag">{ emojiFlag }</div>
+				<div className="xwp-country-card__flag">{ emojiFlag }</div>
 			</div>
-			<h3 className="xwp-country-card__heading">
+			<h2 className="xwp-country-card__heading">
 				{ __( 'Hello from', 'xwp-country-card' ) }{ ' ' }
 				<strong>{ countries[ countryCode ] }</strong> (
 				<span className="xwp-country-card__country-code">
 					{ countryCode }
 				</span>
 				), { continentNames[ continents[ countryCode ] ] }!
-			</h3>
+			</h2>
 			<div className="xwp-country-card__related-posts">
 				<h3 className="xwp-country-card__related-posts__heading">
 					{ hasRelatedPosts
@@ -52,22 +52,22 @@ export default function Preview( { countryCode, relatedPosts } ) {
 						  ) }
 				</h3>
 				{ hasRelatedPosts && (
-					<ul className="xwp-country-card__related-posts-list">
+					<ul className="xwp-country-card__related-posts__list">
 						{ relatedPosts.map( ( relatedPost, index ) => (
 							<li key={ index } className="related-post">
 								<a
-									className="link"
+									className="related-post__link"
 									href={ relatedPost.link }
 									data-post-id={ relatedPost.id }
 								>
-									<h3
-										className="title"
+									<h4
+										className="related-post__title"
 										dangerouslySetInnerHTML={ {
 											__html: relatedPost.title,
 										} }
 									/>
 									<div
-										className="excerpt"
+										className="related-post__excerpt"
 										dangerouslySetInnerHTML={ {
 											__html: relatedPost.excerpt,
 										} }
@@ -78,6 +78,6 @@ export default function Preview( { countryCode, relatedPosts } ) {
 					</ul>
 				) }
 			</div>
-		</div>
+		</article>
 	);
 }
