@@ -27,9 +27,9 @@ export default function Edit( { attributes, setAttributes } ) {
 	const { countryCode, relatedPosts } = attributes;
 
 	const [ isPreview, setPreview ] = useState();
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps( false );
 
-	useEffect( () => setPreview( countryCode ), [ countryCode ] );
+	useEffect( () => setPreview( !! countryCode ), [ countryCode ] );
 
 	const handleChangeCountry = () => {
 		if ( isPreview ) setPreview( false );
