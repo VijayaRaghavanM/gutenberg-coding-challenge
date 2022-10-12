@@ -45,13 +45,12 @@ export default function Edit( { attributes, setAttributes } ) {
 		}
 	};
 
-	const { fetchedPosts } = useSelect( ( select ) => {
-		const posts = select( 'core' ).getEntityRecords( 'postType', 'post', {
+	const fetchedPosts = useSelect( ( select ) => {
+		return select( 'core' ).getEntityRecords( 'postType', 'post', {
 			search: countries[ countryCode ],
 			exclude: select( 'core/editor' ).getCurrentPostId(),
 			fields: [ 'id', 'title', 'excerpt', 'link' ],
 		} );
-		return { fetchedPosts: posts };
 	} );
 
 	useEffect( () => {
