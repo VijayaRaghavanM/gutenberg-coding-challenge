@@ -37,7 +37,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	};
 
 	const handleChangeCountryCode = ( newCountryCode ) => {
-		if ( newCountryCode && countryCode !== newCountryCode ) {
+		if ( countryCode !== newCountryCode ) {
 			setAttributes( {
 				countryCode: newCountryCode,
 				relatedPosts: [],
